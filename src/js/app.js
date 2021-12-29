@@ -27,8 +27,9 @@ messageForm.addEventListener('submit', (e) => {
           <div class="message__coord">${coordinateForm.querySelector('.coordinate__input').value}</div>`;
         messageList.appendChild(newMessage);
         coordinateModal.classList.remove('coordinate__modal--display');
-        messageForm.querySelector('.message__input').value = "";
-        coordinateForm.querySelector('.coordinate__input').value = "";
+        messageForm.querySelector('.message__input').value = '';
+        coordinateForm.querySelector('.coordinate__input').value = '';
+        newMessage = '';
       })
     })
     return;
@@ -41,7 +42,8 @@ messageForm.addEventListener('submit', (e) => {
       <div class="message__coord">${coordinateForm.querySelector('.coordinate__input').value}</div>`;
     messageList.appendChild(newMessage);
     coordinateModal.classList.remove('coordinate__modal--display');
-    messageForm.querySelector('.message__input').value = "";
-    coordinateForm.querySelector('.coordinate__input').value = "";
+    messageForm.querySelector('.message__input').value = '';
+    coordinateForm.querySelector('.coordinate__input').value = '';
+    newMessage = '';
   });
 });
