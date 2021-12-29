@@ -2,11 +2,12 @@ const messageList = document.querySelector('.message__list');
 const messageForm = document.querySelector('.message__form');
 const coordinateModal = document.querySelector('.coordinate__modal');
 const coordinateForm = document.querySelector('.coordinate__form');
+let newMessage;
 messageForm.addEventListener('submit', (e) => {
   e.preventDefault();
   const now = new Date();
   let coordinates;
-  const newMessage = document.createElement('div');
+  newMessage = document.createElement('div');
   newMessage.classList.add('message__item');
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -16,6 +17,7 @@ messageForm.addEventListener('submit', (e) => {
       ${messageForm.querySelector('.message__input').value}
       <div class="message__coord">${coordinates}</div>`;
       messageList.appendChild(newMessage);
+      messageForm.querySelector('.message__input').value = "";
     }, () => {
       coordinateModal.classList.add('coordinate__modal--display');
       coordinateForm.addEventListener('submit', (e) => {
@@ -25,6 +27,8 @@ messageForm.addEventListener('submit', (e) => {
           <div class="message__coord">${coordinateForm.querySelector('.coordinate__input').value}</div>`;
         messageList.appendChild(newMessage);
         coordinateModal.classList.remove('coordinate__modal--display');
+        messageForm.querySelector('.message__input').value = "";
+        coordinateForm.querySelector('.coordinate__input').value = "";
       })
     })
     return;
@@ -37,7 +41,7 @@ messageForm.addEventListener('submit', (e) => {
       <div class="message__coord">${coordinateForm.querySelector('.coordinate__input').value}</div>`;
     messageList.appendChild(newMessage);
     coordinateModal.classList.remove('coordinate__modal--display');
+    messageForm.querySelector('.message__input').value = "";
+    coordinateForm.querySelector('.coordinate__input').value = "";
   });
 });
-
-
