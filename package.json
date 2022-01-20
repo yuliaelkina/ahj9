@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yuliaelkina/ahj9.git"
+    "url": "git+https://github.com/YuliaNina/hw9.git"
   },
   "author": "",
   "license": "ISC",
@@ -53,7 +53,7 @@
     "webpack-merge": "^5.8.0"
   },
   "bugs": {
-    "url": "https://github.com/yuliaelkina/ahj9/issues"
+    "url": "https://github.com/YuliaNina/hw9/issues"
   },
-  "homepage": "https://github.com/yuliaelkina/ahj9#readme"
+  "homepage": "https://github.com/YuliaNina/hw9#readme"
 }
